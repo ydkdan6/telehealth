@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/results.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/popup.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;1,300&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: url("./images/bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+    <title>MedHelp</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-row">
+        <ul>
+          <li class="underline">
+
+            <a href="./index.html">Back</a>
+
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="pop-up-bg">
+      <div class="popup">
+        <div class="text">Oops no results found :(</div>
+        <div class="button-area">
+          <a href="./index.html">
+            <div class="btn-grey">
+              Back <img src="./images/arrow.svg" alt="Right Arrow" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="container">
+        <table class="padding-left: 20px; padding-right: 20px">
+          <tr class="table-header">
+            <th class="diseaseName">Disease</th>
+            <th class="accuracy">Accuracy</th>
+            <th class="doctorSpecialization">Specialization</th>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+  <script src="./env.js"></script>
+  <script src="./results.js"></script>
+</html>

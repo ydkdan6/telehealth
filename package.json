@@ -1,0 +1,23 @@
+{
+  "name": "symptom-checker",
+  "version": "1.0.0",
+  "description": "A symptom Checker App",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Symptom"
+  ],
+  "author": "Daniel",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "base-64": "^1.0.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}
