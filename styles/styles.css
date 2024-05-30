@@ -33,6 +33,11 @@ header {
   top: 0;
   z-index: 1;
 }
+
+.bot-image {
+  width: 5rem;
+  height: 4rem;
+}
 .logo {
   display: flex;
   flex-direction: row;

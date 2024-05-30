@@ -13,10 +13,11 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const username = process.env.APIMEDIC_USER;
 const encodedPassword = process.env.APIMEDIC_PASSWORD;
 const token = process.env.AUTH_TOKEN;
+let symptoms = new Map();
 
 if (!username || !encodedPassword) {
     console.error('Error: APIMEDIC_USER and APIMEDIC_PASSWORD environment variables must be set');
@@ -109,6 +110,7 @@ app.post('/ussd', async (req, res) => {
                     if (symptomsData.length > 0) {
                         // Extract symptom name from symptomsData
                         const matchedSymptom = symptomsData[0].Name;
+
                         // Process symptomsData to find matching symptom and diseases
                         // Construct response accordingly
                         response = `END Symptom: ${matchedSymptom}\nAssociated Diseases: <list of diseases>`;

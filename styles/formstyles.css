@@ -108,6 +108,10 @@
   color: #fff;
   transition: 1s;
 }
+
+.bot-image {
+  margin-left: 15rem;
+}
 .button-see-results:hover {
   background: #1976D2(244, 59%, 63%);
 }

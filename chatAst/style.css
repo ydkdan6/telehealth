@@ -47,6 +47,8 @@ h4 {
 }
 
 #response-container {
+    position: absolute;
+    top: 22rem;
     border: 1px thin grey;
     height: 300px;
     color: black;
@@ -74,6 +76,12 @@ h5 {
     font-size: 22px;
     animation: fade-in 2s ease-in;
     opacity: 1;
+}
+
+.bot-image {
+    position: absolute;
+    top: 17rem;
+    left:4rem;
 }
 
 @keyframes fade-in {

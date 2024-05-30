@@ -17,7 +17,7 @@
         background-repeat: no-repeat;
       }
     </style>
-    <title>Symptom checker</title>
+    <title>TeleHealthNG Symptom checker</title>
   </head>
 
   <body>
@@ -43,6 +43,9 @@
           </h3>
         </div>
       </div>
+      <a href="chatAst/main.html" style="margin-top: 1.1rem; width: 12rem;" class='bot-image'>        
+        <img src="botimage.jpg" alt="bot-banner" style="margin-right: 2rem; margin-top: 2px;"  width="55rem" height="43rem"/>
+    </a>
     </header>
 
     <main>
@@ -54,11 +57,18 @@
 
             diagnosis
           </p>
-
           <div class="form-area">
             <div class="error">
               <img src="./images/cross.svg" alt="cross" /> Please fill out all
               fields correctly
+            </div>
+            
+            <div class="searchInput">
+              <input type="tel" name="phone-number" id="number" required />
+
+              <label for="phone-number" class="label-name">
+                <span class="content-name"> Phone Number </span></label
+              >
             </div>
             <div class="searchInput">
               <input type="text" name="year-of-birth" required />
@@ -102,13 +112,6 @@
             >
               See Results
             </button>
-
-            <a href="chatAst/main.html"><button
-            class="mui-contained-button button-see-results"
-            style="margin-bottom: 30px; font-size: large"
-          >
-          Health-Bot Assistant
-          </button></a>
             </div>
           </div>
         </div>
