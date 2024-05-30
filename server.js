@@ -60,6 +60,26 @@ async function getSymptoms(symptomsDictionary, gender, age, token) {
         return [];
     }
 }
+//Function To fetch Diseases
+async function getDiseases(symptomId, gender, age, token) {
+    try {
+        const response = await axios.get(`https://healthservice.priaid.ch/issues`, {
+            params: {
+                symptomId: symptomId,
+                gender: gender,
+                age: age,
+                token: token,
+                format: 'json',
+                language: 'en-gb'
+            }
+        });
+        console.log('Diseases fetched successfully');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching diseases:', error.response ? error.response.data : error.message);
+        return [];
+    }
+}
 
 // USSD endpoint
 app.post('/ussd', async (req, res) => {
@@ -111,9 +131,17 @@ app.post('/ussd', async (req, res) => {
                         // Extract symptom name from symptomsData
                         const matchedSymptom = symptomsData[0].Name;
 
-                        // Process symptomsData to find matching symptom and diseases
-                        // Construct response accordingly
-                        response = `END Symptom: ${matchedSymptom}\nAssociated Diseases: <list of diseases>`;
+                        // Fetch diseases associated with the symptom
+                        const diseasesData = await getDiseases(symptomId, gender, age, token);
+                        if (diseasesData.length > 0) {
+                            // Extract disease names from diseasesData
+                            const diseases = diseasesData.slice(0, 2).map(disease => disease.Name);
+
+                            // Construct response with symptom and associated diseases
+                            response = `END Symptom: ${matchedSymptom}\nAssociated Diseases: ${diseases.join(', ')}`;
+                        } else {
+                            response = 'END No associated diseases found.';
+                        }
                     } else {
                         response = 'END No matching symptoms found.';
                     }
